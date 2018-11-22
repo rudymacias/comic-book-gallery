@@ -10,7 +10,7 @@ namespace ComicBookGallery.Models
         public Artist[] Artists { get; set; }
         public bool Favorite { get; set; }
 
-        public string DisplayTest {
+        public string DisplayText {
             get
             {
                 return SeriesTitle + " #" + IssueNumber;
