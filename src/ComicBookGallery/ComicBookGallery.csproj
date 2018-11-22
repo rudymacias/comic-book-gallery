@@ -11,6 +11,7 @@
 
   <ItemGroup>
     <Folder Include="Views\ComicBooks\" />
+    <Folder Include="Data\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="Views\ComicBooks\Detail.cshtml" />
