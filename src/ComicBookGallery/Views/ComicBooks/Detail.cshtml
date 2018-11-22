@@ -11,17 +11,26 @@
         "Letters: Chris Eliopoulos"
     };
 }
-<div class="page-header">
-    <h1>@seriesTitle</h1>
-</div>
-<div class="jumbotron">
+&nbsp;
+<div class="jumbotron text-center">
     <h1>@seriesTitle</h1>
     <p class="lead">@Html.Raw(description)</p>
     <p><a class="btn btn-lg btn-success" href="#" role="button">Issue #@issueNumber</a></p>
 </div>
-<ul class="list-group">
-    @foreach (string artist in artists)
-    {
-        <li class="list-group-item">@artist</li>
-    }
-</ul>
+@if (artists.Length > 0)
+{
+    <div class="page-header">
+        <h3>Artists</h3>
+    </div>
+    <ul class="list-group">
+        @foreach (var artist in artists)
+        {
+            <li class="list-group-item">@artist</li>
+        }
+    </ul>
+} else
+{
+    <div class="alert alert-warning" role="alert">
+        No artists available.
+    </div>
+}
