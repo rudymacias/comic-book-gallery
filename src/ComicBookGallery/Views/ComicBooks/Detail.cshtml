@@ -1,34 +1,25 @@
 ﻿@{
-    var seriesTitle = "The Amazing Spider-Man";
-    var issueNumber = 700;
-    var description = "Final issue! Witness the final hours of Doctor Octopus' life and his one, last, great act of revenge! Even if Spider-Man survives... <strong>will Peter Parker?</strong>";
-    var artists = new string[]
-    {
-        "Script: Dan Slott",
-        "Pencils: Humberto Ramos",
-        "Inks: Victor Olazaba",
-        "Colors: Edgar Delgado",
-        "Letters: Chris Eliopoulos"
-    };
+
 }
 &nbsp;
 <div class="jumbotron text-center">
-    <h1>@seriesTitle</h1>
-    <p class="lead">@Html.Raw(description)</p>
-    <p><a class="btn btn-lg btn-success" href="#" role="button">Issue #@issueNumber</a></p>
+    <h1>@ViewBag.SeriesTitle</h1>
+    <p class="lead">@Html.Raw(ViewBag.Description)</p>
+    <p><a class="btn btn-lg btn-success" href="#" role="button">Issue #@ViewBag.IssueNumber</a></p>
 </div>
-@if (artists.Length > 0)
+@if (ViewBag.Artists.Length > 0)
 {
     <div class="page-header">
         <h3>Artists</h3>
     </div>
     <ul class="list-group">
-        @foreach (var artist in artists)
+        @foreach (var artist in ViewBag.Artists)
         {
             <li class="list-group-item">@artist</li>
         }
     </ul>
-} else
+}
+else
 {
     <div class="alert alert-warning" role="alert">
         No artists available.
