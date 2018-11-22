@@ -35,6 +35,15 @@
             </div>
         </div>
 
+        @if (ViewBag.ShowBackBar != null && ViewBag.ShowBackBar)
+        {
+            <div class="backbar">
+                <div class="container">
+                    <a asp-area="" asp-controller="ComicBooks" asp-action="Index" class="btn btn-default">Return to List</a>
+                </div>
+            </div>
+        }
+
         <div class="container body-content">
             @RenderBody()
             <hr />
